@@ -18,6 +18,9 @@ class Game:
     
     def game_init(self):
 
+        pygame.init()
+        pygame.font.init()
+
         self.win = pygame.display.set_mode((self.width, self.height))
         pygame.display.set_caption("Whirly Bird")
 
@@ -38,6 +41,7 @@ class Game:
                 if event.type == pygame.QUIT:
                     run = False
 
+        pygame.font.quit()
         pygame.quit()
 
 if __name__ == "__main__":
