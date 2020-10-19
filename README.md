@@ -1,4 +1,4 @@
 # Whirly Bird
 
-#### Whirly bird game.
+Whirly bird game.
 #### It's not done yet.
