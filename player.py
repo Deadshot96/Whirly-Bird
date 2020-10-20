@@ -28,7 +28,7 @@ class Player:
         self.x += self.vx
         self.y += self.vy
 
-        self.vy = max(4, self.vy + self.ay)
+        self.vy = min(4, self.vy + self.ay)
 
     def push_right(self):
         self.vx = 3
@@ -40,6 +40,9 @@ class Player:
 
     def stop_push(self):
         self.vx = 0
+
+    def jump(self):
+        self.vy = -18
 
     def update_velocity(self, vel):
         pass

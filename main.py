@@ -97,7 +97,7 @@ class Game:
                         self.new_game()
 
                     if pressed[pygame.K_UP]:
-                        pass
+                        self.player.jump()
 
                     if pressed[pygame.K_DOWN]:
                         pass
@@ -108,8 +108,8 @@ class Game:
                     if pressed[pygame.K_LEFT]:
                         self.player.push_left()
                 
-                if event.type == pygame.KEYUP:
-                    self.player.stop_push()
+                # if event.type == pygame.KEYUP:
+                #     self.player.stop_push()
 
             self.draw()
 
