@@ -4,6 +4,7 @@ import time
 import random
 import pygame
 from settings import *
+from player import Player
 import colors
 
 class Game:
@@ -22,6 +23,7 @@ class Game:
         self.xoff = XOFF
         self.yoff = YOFF
         self.gameStart = False
+        self.player = None
 
     
     def game_init(self):
@@ -62,10 +64,16 @@ class Game:
         
             self.gameWin.blit(text, (textX, textY))
 
+        if self.gameStart:
+            self.player.move()
+            self.player.draw(self.gameWin)
+
         pygame.display.update()
 
     def new_game(self):
-        pass
+        x = self.gameWidth // 2
+        y = self.gameHeight // 2
+        self.player = Player(x, y)
 
 
     def run(self):
@@ -87,6 +95,21 @@ class Game:
                     if pressed[pygame.K_RETURN]:
                         self.gameStart = True
                         self.new_game()
+
+                    if pressed[pygame.K_UP]:
+                        pass
+
+                    if pressed[pygame.K_DOWN]:
+                        pass
+
+                    if pressed[pygame.K_RIGHT]:
+                        self.player.push_right()
+
+                    if pressed[pygame.K_LEFT]:
+                        self.player.push_left()
+                
+                if event.type == pygame.KEYUP:
+                    self.player.stop_push()
 
             self.draw()
 

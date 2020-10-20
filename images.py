@@ -40,8 +40,10 @@ asset_path = os.path.join(os.getcwd(), 'assets')
 #     pygame.image.save(img, os.path.join(paste_path, file))
 
 man_dir = dict()
-man_left = pygame.image.load(os.path.join(asset_path, 'left.jpg'))
 man_right = pygame.image.load(os.path.join(asset_path, 'right.jpg'))
+# man_left = pygame.image.load(os.path.join(asset_path, 'left.jpg'))
+# man_right = pygame.image.load(os.path.join(asset_path, 'right.jpg'))
+man_left = pygame.transform.flip(man_right, True, False)
 
 man_dir['left'] = pygame.transform.scale(man_left, (35, 45))
 man_dir['right'] = pygame.transform.scale(man_right, (35, 45))
