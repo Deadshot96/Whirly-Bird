@@ -14,7 +14,7 @@ asset_path = os.path.join(os.getcwd(), 'assets')
 # step_c, step_s, step_t, block
 # SIZES & INSTANCES
 # CAP - 35:25
-# MAN - Left= 40:40, Right= 40:40, CapMan= 35:45 (3)
+# MAN - Left= 35:45, Right= 35:45, CapMan= 35:45 (3)
 # step_h - 40:20
 # step_f - 40:25
 # step_i - 40:20 - (3)
@@ -38,3 +38,19 @@ asset_path = os.path.join(os.getcwd(), 'assets')
 #                     img.set_at((x, y), MINT_CREAM)
 
 #     pygame.image.save(img, os.path.join(paste_path, file))
+
+man_dir = dict()
+man_left = pygame.image.load(os.path.join(asset_path, 'left.jpg'))
+man_right = pygame.image.load(os.path.join(asset_path, 'right.jpg'))
+
+man_dir['left'] = pygame.transform.scale(man_left, (35, 45))
+man_dir['right'] = pygame.transform.scale(man_right, (35, 45))
+
+# Man Caps:
+cap1 = pygame.transform.scale(pygame.image.load(os.path.join(asset_path, 'capman1.jpg')), (35, 45))
+cap2 = pygame.transform.scale(pygame.image.load(os.path.join(asset_path, 'capman2.jpg')), (35, 45))
+cap3 = pygame.transform.scale(pygame.image.load(os.path.join(asset_path, 'capman3.jpg')), (35, 45))
+
+man_caps = [cap3, cap2, cap1, cap2]
+man_dir['caps'] = man_caps
+
