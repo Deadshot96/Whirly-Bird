@@ -1,4 +1,5 @@
 from images import man_dir
+from settings import GW_WIDTH, GW_HEIGHT
 
 class Player:
 
@@ -28,6 +29,14 @@ class Player:
         self.x += self.vx
         self.y += self.vy
 
+        if self.x + self.w // 2 < 0:
+            self.x = GW_WIDTH - self.w // 2
+        elif self.x - self.w // 2 > GW_WIDTH:
+            self.x = -self.w // 2
+
+        if self.y + self.h // 2 >= GW_HEIGHT:
+            self.jump()
+
         self.vy = min(4, self.vy + self.ay)
 
     def push_right(self):
@@ -42,7 +51,7 @@ class Player:
         self.vx = 0
 
     def jump(self):
-        self.vy = -18
+        self.vy = -16
 
     def update_velocity(self, vel):
         pass

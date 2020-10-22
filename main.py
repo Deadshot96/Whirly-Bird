@@ -113,8 +113,8 @@ class Game:
                     if pressed[pygame.K_LEFT]:
                         self.player.push_left()
                 
-                # if event.type == pygame.KEYUP:
-                #     self.player.stop_push()
+                if event.type == pygame.KEYUP:
+                    self.player.stop_push()
 
             self.draw()
 
