@@ -54,6 +54,12 @@ class Game:
         # Clock init
         self.clock = pygame.time.Clock()
 
+    def game_loop(self):
+        self.player.move()
+        self.player.draw(self.gameWin)
+
+    
+
     def draw(self):
         self.gameWin.fill(colors.MINT_CREAM)
 
@@ -64,10 +70,9 @@ class Game:
         
             self.gameWin.blit(text, (textX, textY))
 
-        if self.gameStart:
-            self.player.move()
-            self.player.draw(self.gameWin)
-
+        else:
+            self.game_loop()
+            
         pygame.display.update()
 
     def new_game(self):
