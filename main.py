@@ -7,6 +7,7 @@ from settings import *
 from player import Player
 import colors
 
+
 class Game:
 
     def __init__(self):
